@@ -214,7 +214,7 @@ const ydoc = new Y.Doc()
 
 // this allows you to instantly get the (cached) documents data
 const indexeddbProvider = new IndexeddbPersistence('count-demo', ydoc)
-indexeddbProvider.whenSynced.then(() => {
+indexeddbProvider.on('synced', () => {
   console.log('loaded data from indexed db')
 })
 
